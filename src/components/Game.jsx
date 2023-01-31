@@ -17,7 +17,7 @@ export default function Game() {
   }
 
   return (
-    <div className="mx-auto mt-12 flex max-w-lg flex-col items-center text-zinc-900 dark:text-zinc-50">
+    <div className="mx-auto mt-12 flex max-w-xs flex-col items-center gap-8 text-zinc-900 dark:text-zinc-50">
       <GuessGrid guesses={guesses} />
       <GuessInput handleSubmit={handleSubmit} />
     </div>

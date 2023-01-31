@@ -19,6 +19,7 @@ export default function GuessInput({ handleSubmit }) {
         }
         setGuess("");
       }}
+      className="flex w-full items-center"
     >
       <input
         value={guess}
@@ -31,7 +32,7 @@ export default function GuessInput({ handleSubmit }) {
           console.log(guess);
         }}
         placeholder="GUESS"
-        className="rounded-2xl px-4 py-3 font-medium uppercase tracking-wider focus:outline-none dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder:text-neutral-500"
+        className="w-full rounded-2xl px-4 py-3 font-medium uppercase tracking-wider focus:outline-none dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder:text-neutral-500"
       />
     </form>
   );
