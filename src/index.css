@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Satoshi";
+  src: url("assets/fonts/Satoshi-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("assets/fonts/Satoshi-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: medium;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("assets/fonts/Satoshi-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("assets/fonts/Satoshi-Regular.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+  font-style: black;
+}
+
 html {
   @apply bg-white dark:bg-neutral-900;
 }
