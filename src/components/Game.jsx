@@ -10,16 +10,52 @@ export default function Game() {
   console.info({ answer });
 
   const [guesses, setGuesses] = useState([]);
-  console.log(guesses);
+  const [gameStatus, setGameStatus] = useState("gameRunning");
 
   function handleSubmit(guess) {
-    setGuesses((prevGuesses) => [...prevGuesses, guess]);
+    if (guesses.length < 6) {
+      setGuesses((prevGuesses) => [...prevGuesses, guess]);
+
+      if (guess === answer) {
+        setGameStatus("gameWon");
+      }
+    }
+
+    if (guesses.length === 5 && guess !== answer) {
+      setGameStatus("gameLost");
+    }
+  }
+
+  function playAgain() {
+    setAnswer(sample(validWords).toUpperCase());
+    setGuesses([]);
+    setGameStatus("gameRunning");
   }
 
   return (
-    <div className="mx-auto mt-12 flex max-w-xs flex-col items-center gap-8 text-zinc-900 dark:text-zinc-50">
-      <GuessGrid guesses={guesses} />
-      <GuessInput handleSubmit={handleSubmit} />
+    <div className="mx-auto flex h-screen max-w-xs flex-col items-center justify-center gap-8 text-zinc-900 dark:text-zinc-50">
+      {gameStatus !== "gameRunning" && (
+        <div className="absolute top-24">
+          {gameStatus === "gameWon"
+            ? `You won dude. Took you ${
+                guesses.length === 1
+                  ? `just one try`
+                  : `${guesses.length} tries`
+              }.`
+            : `You lost dude. The word was ${answer}.`}
+        </div>
+      )}
+      <GuessGrid guesses={guesses} answer={answer} />
+      {gameStatus === "gameRunning" ? (
+        <GuessInput handleSubmit={handleSubmit} />
+      ) : (
+        <button
+          onClick={playAgain}
+          className="h-14 w-full rounded-2xl text-sm font-bold uppercase tracking-widest dark:bg-neutral-800 dark:text-neutral-200"
+        >
+          Play again
+        </button>
+      )}
     </div>
   );
 }

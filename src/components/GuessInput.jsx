@@ -32,7 +32,7 @@ export default function GuessInput({ handleSubmit }) {
           console.log(guess);
         }}
         placeholder="GUESS"
-        className="w-full rounded-2xl px-4 py-3 font-medium uppercase tracking-wider focus:outline-none dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder:text-neutral-500"
+        className="flex h-14 w-full items-center rounded-2xl bg-neutral-100 px-5 font-medium uppercase tracking-wider placeholder:text-neutral-400 focus:outline-none dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder:text-neutral-500"
       />
     </form>
   );
