@@ -4,6 +4,7 @@ import { validWords } from "../data";
 
 import GuessInput from "./GuessInput";
 import GuessGrid from "./GuessGrid";
+import Keyboard from "./Keyboard";
 
 export default function Game() {
   const [answer, setAnswer] = useState(sample(validWords).toUpperCase());
@@ -35,7 +36,7 @@ export default function Game() {
   return (
     <div className="mx-auto flex h-screen max-w-xs flex-col items-center justify-center gap-8 text-zinc-900 dark:text-zinc-50">
       {gameStatus !== "gameRunning" && (
-        <div className="absolute top-24">
+        <div className="absolute top-24 font-medium tracking-wide">
           {gameStatus === "gameWon"
             ? `You won dude. Took you ${
                 guesses.length === 1
@@ -47,7 +48,10 @@ export default function Game() {
       )}
       <GuessGrid guesses={guesses} answer={answer} />
       {gameStatus === "gameRunning" ? (
-        <GuessInput handleSubmit={handleSubmit} />
+        <>
+          <GuessInput handleSubmit={handleSubmit} />
+          <Keyboard />
+        </>
       ) : (
         <button
           onClick={playAgain}

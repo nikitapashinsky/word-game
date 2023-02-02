@@ -8,20 +8,20 @@ export default function GuessRow({ guess, answer }) {
     return (
       <div
         className={`
-        flex aspect-square w-14 items-center justify-center rounded-2xl border-2 border-neutral-200 text-center font-bold dark:border-neutral-700/50
+        flex aspect-square w-14 items-center justify-center rounded-2xl border-2 border-neutral-200 text-center text-3xl font-bold dark:border-neutral-700/50
         ${
           status === "misplaced"
-            ? "dark:border-yellow-400/30 dark:bg-yellow-400/50 dark:text-yellow-100"
+            ? "border-yellow-500 bg-yellow-400 text-yellow-900 dark:border-yellow-400/30 dark:bg-yellow-400/50 dark:text-yellow-100"
             : ""
         } 
         ${
           status === "correct"
-            ? "dark:border-green-300/25 dark:bg-green-400/50 dark:text-green-100"
+            ? "border-green-500 bg-green-400 text-green-900 dark:border-green-300/25 dark:bg-green-400/50 dark:text-green-100"
             : ""
         }
         ${
           status === "incorrect"
-            ? "dark:bg-neutral-800 dark:text-neutral-400"
+            ? "border-neutral-400/50 bg-neutral-300 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-400"
             : ""
         }
         `}

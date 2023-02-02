@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { guessWords, validWords } from "../data";
+import { motion } from "framer-motion";
 
 export default function GuessInput({ handleSubmit }) {
   const [guess, setGuess] = useState("");
@@ -15,7 +16,7 @@ export default function GuessInput({ handleSubmit }) {
         ) {
           handleSubmit(guess.toUpperCase());
         } else {
-          console.log("Not in dictionary");
+          console.log("not in word list");
         }
         setGuess("");
       }}
