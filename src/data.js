@@ -1,11 +1,5 @@
 // Data from @alexmj212's Word Guess: https://github.com/alexmj212/word-guess (Thank you!)
 
-export const keyboard = {
-  top: ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
-  middle: ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
-  bottom: ["Z", "X", "C", "V", "B", "N", "M"],
-};
-
 export const validWords = [
   "cigar",
   "rebut",

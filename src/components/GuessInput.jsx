@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { guessWords, validWords } from "../data";
-import { motion } from "framer-motion";
 
-export default function GuessInput({ handleSubmit }) {
+export default function GuessInput({ innerRef, handleSubmit }) {
   const [guess, setGuess] = useState("");
   return (
     <form
@@ -23,6 +22,8 @@ export default function GuessInput({ handleSubmit }) {
       className="flex w-full items-center"
     >
       <input
+        ref={innerRef}
+        autoFocus
         value={guess}
         type="text"
         minLength={5}
@@ -33,7 +34,7 @@ export default function GuessInput({ handleSubmit }) {
           console.log(guess);
         }}
         placeholder="GUESS"
-        className="flex h-14 w-full items-center rounded-2xl bg-neutral-100 px-5 font-medium uppercase tracking-wider placeholder:text-neutral-400 focus:outline-none dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder:text-neutral-500"
+        className="flex h-14 w-full items-center rounded-2xl border-2 border-neutral-200 px-5 font-medium uppercase tracking-wider placeholder:text-neutral-400 focus:outline-none dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder:text-neutral-500"
       />
     </form>
   );
